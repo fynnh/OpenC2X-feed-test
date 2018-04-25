@@ -10,7 +10,7 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=asn1c
 PKG_VERSION:=0.9.27
 PKG_RELEASE:=1
-PKG_SOURCE:=zeromq-$(PKG_VERSION).tar.gz
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:= https://github.com/vlm/asn1c/releases/download/v$(PKG_VERSION)/
 PKG_MD5SUM:=e59fb7c79ed69a3a04e02e26b4006355
 
