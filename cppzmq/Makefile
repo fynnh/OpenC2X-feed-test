@@ -16,7 +16,6 @@ PKG_LICENSE:=MIT
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://codeload.github.com/zeromq/cppzmq/tar.gz/v$(PKG_VERSION)?
 PKG_HASH:=3ef50070ac5877c06c6bb25091028465020e181bbfd08f110294ed6bc419737d
-PKG_BUILD_DEPENDS:=libstdzmq
 
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
@@ -27,7 +26,7 @@ define Package/cppzmq
   CATEGORY:=Languages
   TITLE:=C++ ZeroMQ binding
   URL:=https://github.com/zeromq/cppzmq/
-  DEPENDS:= +libstdzmq
+  DEPENDS:= +stdzmq
 endef
 
 define Package/cppzmq/description
