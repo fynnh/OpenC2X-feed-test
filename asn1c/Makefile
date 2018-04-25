@@ -52,7 +52,7 @@ endef
  
 define Host/Prepare
 	$(call Host/Prepare/Default)
-	$(CP) ./src/* $(HOST_BUILD_DIR)/
+	#$(CP) ./src/* $(HOST_BUILD_DIR)/
 endef
 
 define Host/Install
