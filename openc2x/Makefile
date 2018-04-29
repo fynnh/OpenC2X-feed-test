@@ -8,7 +8,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=openc2x
-PKG_VERSION:=1.17
+PKG_VERSION:=1.18
 PKG_RELEASE:=1
 
 
