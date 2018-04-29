@@ -38,7 +38,6 @@ endef
 
 define Build/Prepare
 	$(call Build/Prepare/Default)
-	#$(CP) ./src/* $(PKG_BUILD_DIR)/
 endef
 
 define Build/Install
@@ -52,7 +51,6 @@ endef
  
 define Host/Prepare
 	$(call Host/Prepare/Default)
-	#$(CP) ./src/* $(HOST_BUILD_DIR)/
 endef
 
 define Host/Install
@@ -70,9 +68,6 @@ endef
 
 
 define Package/asn1c/install
-#	$(INSTALL_DIR) $(1)/usr/bin
-	#$(INSTALL_BIN) $(PKG_BUILD_DIR)/hwclient $(1)/usr/bin/
-	#$(INSTALL_BIN) $(PKG_BUILD_DIR)/hwserver $(1)/usr/bin/
 endef
 
 

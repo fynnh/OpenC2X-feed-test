@@ -23,22 +23,12 @@ PKG_MAINTAINER:=Hal Martin
 PKG_LICENSE:=GPL-2
 PKG_CONFIG_DEPENDS:=
 PKG_USE_MIPS16:=0 
-#PKG_SOURCE_URL:=http://www.ccs-labs.org/software/openc2x/
-#PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-#PKG_HASH:=a5bf011250d4decc276f46c59facd6845a9657aa0283d0beb777a9d52127af0c
-#MAKE_PATH:=Open
+
 include $(INCLUDE_DIR)/uclibc++.mk
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
 
 
-
-
-
-#TARGET_LDFLAGS+= \
-#  -Wl,-rpath-link=$(STAGING_DIR)/usr/lib \
-#  -Wl,-rpath-link=$(STAGING_DIR)/usr/lib/libconfig/lib \
-#  -Wl,-rpath-link=$(STAGING_DIR)/usr/lib/sqlite/lib
 
 define Package/openc2x
   SECTION:=utils
@@ -49,18 +39,15 @@ define Package/openc2x
   URL:=http://www.ccs-labs.org/software/openc2x/
   MENU:=1
 endef
-#TARGET_CFLAGS += -ggdb3 \
-#	-g 
+
 	
 TARGET_CXXFLAGS += \
 	-I$(STAGING_DIR)/usr/include/libnl-tiny \
 	-I$(STAGING_DIR)/usr/include \
-#	-ggdb3 \
-#	-g
+
 
 CMAKE_OPTIONS += \
 	-DLIBNL_LIBS=-lnl-tiny \
-#	-DDEBUG=1
 
 define Package/openc2x/description
 Vehicular networking is at the corner from early research to final deployment. This phase requires more field testing and real-world experimentation. Most Field Operational Tests (FOTs) are based on proprietary commercial hardware that only allows for marginal modifications of the protocol stack. Furthermore, the roll-out of updated implementations for new or changing protocol standards often takes a prohibitively long time.
@@ -70,18 +57,8 @@ endef
 
 define Build/Prepare
 	$(call Build/Prepare/Default)
-	#mkdir -p $(PKG_BUILD_DIR)
-	#$(CP) $(PKG_BUILD_DIR)/../OpenC2X/* $(PKG_BUILD_DIR)/
 endef
 
-#define Build/Configure
-#endef
-
-#define Build/Compile
-#	$(MAKE) -C $(PKG_BUILD_DIR) $(TARGET_CONFIGURE_OPTS)
-#endef
-	#$(INSTALL_DIR) $(1)/etc/config
-	#$(INSTALL_CONF) $(PKG_BUILD_DIR)/l $(1)/etc/config/l
 
 define Package/openc2x/install
 	$(INSTALL_DIR) $(1)/usr/bin
@@ -90,14 +67,6 @@ define Package/openc2x/install
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_DIR) $(1)/usr/share/openc2x/gpsdata
 	$(INSTALL_DIR) $(1)/etc/uci-defaults
-	#$(INSTALL_BIN) $(PKG_BUILD_DIR)/cam/src/cam $(1)/usr/bin/
-	#$(INSTALL_BIN) $(PKG_BUILD_DIR)/dcc/src/dcc $(1)/usr/bin/
-	#$(INSTALL_BIN) $(PKG_BUILD_DIR)/denm/src/denm $(1)/usr/bin/
-	#$(INSTALL_BIN) $(PKG_BUILD_DIR)/denmApp/src/denmApp $(1)/usr/bin/
-	#$(INSTALL_BIN) $(PKG_BUILD_DIR)/gps/src/gpsService $(1)/usr/bin/
-	#$(INSTALL_BIN) $(PKG_BUILD_DIR)/httpServer/src/httpServer $(1)/usr/bin/
-	#$(INSTALL_BIN) $(PKG_BUILD_DIR)/ldm/src/ldm $(1)/usr/bin/
-	#$(INSTALL_BIN) $(PKG_BUILD_DIR)/obd2/src/obd2 $(1)/usr/bin/
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/* $(1)/usr/lib/
 	$(CP) $(PKG_INSTALL_DIR)/usr/bin/* $(1)/usr/bin/
 	$(CP) $(PKG_INSTALL_DIR)/etc/config/* $(1)/etc/config/
