@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=openc2x
-PKG_VERSION:=1.18
+PKG_VERSION:=1.22
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:= https://github.com/fynnh/OpenC2X-standalone/releases/download/v$(PKG_VERSION)/
-PKG_MD5SUM:=e59fb7c79ed69a3a04e02e26b4006355
+PKG_MD5SUM:=fad76200e74d3feffb9f57ae332346ed
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_SOURCE_SUBDIR)
 PKG_BUILD_DEPENDS:=asn1c/host autoconf-archive
