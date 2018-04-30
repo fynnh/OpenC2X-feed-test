@@ -12,7 +12,7 @@ PKG_VERSION:=1.2
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:= https://github.com/florianklingler/OpenC2X-standalone/archive/v$(PKG_VERSION).tar.gz?
+PKG_SOURCE_URL:= https://codeload.github.com/florianklingler/OpenC2X-standalone/tar.gz/v$(PKG_VERSION)?
 PKG_MD5SUM:=fecfe43487f9c1b1cd79769840ac063f
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_SOURCE_SUBDIR)
